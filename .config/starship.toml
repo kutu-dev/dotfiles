@@ -9,6 +9,7 @@ read_only = " "
 truncation_symbol = "…/"
 
 # Nerd font icons
+
 [aws]
 symbol = "  "
 

@@ -1,0 +1,9 @@
+# Miscellaneous files
+.DS_Store
+
+# Avoid recursion when cloning the repository
+.dotfiles
+
+# Karabiner
+.config/karabiner/automatic_backups
+
