@@ -1,0 +1,5 @@
+notes_path = '/Users/kutu-dev/Documents/notes'
+extension = 'md'
+no_whitespaces = false
+no_uppercase = false
+no_firstline = true
