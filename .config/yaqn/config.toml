@@ -1,4 +1,4 @@
-notes_path = '/Users/kutu-dev/Documents/notes'
+notes_path = 'default'
 extension = 'md'
 no_whitespaces = false
 no_uppercase = false

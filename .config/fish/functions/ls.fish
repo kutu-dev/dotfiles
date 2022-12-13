@@ -1,3 +1,3 @@
 function ls --description 'Change the default \'ls\' with a configured \'exa\''
-    exa --icons --git $argv
+    command exa --icons --git $argv
 end
