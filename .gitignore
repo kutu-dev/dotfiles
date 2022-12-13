@@ -4,6 +4,7 @@
 # Avoid recursion when cloning the repository
 .dotfiles
 
-# Karabiner
-.config/karabiner/automatic_backups
+# Unwanted configs
+.config/karabiner/automatic_backups/
+.config/spicetify/
 
