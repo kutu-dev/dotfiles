@@ -1,10 +1,10 @@
 # Amazing Kutu's Dotfiles
-> My configuration files and workflow for MacOS
+My configuration files and workflow for MacOS
 
 ## Install
 > **Note:** It's **not** recommended to just install my dotfiles without understanding it (just clone this repository and start patiently adding and editing my config to ajust it to your workflow).
 
-> Also this installation scrips has been made with macOS in mind so it will use `brew` and some MacOS only apps.
+This installation scrips has been made with macOS in mind so it will use `brew` and some MacOS only apps, please have this in mind.
 
 If you anyway want to install my full configuration do this:
 ```bash
