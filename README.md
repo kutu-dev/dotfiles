@@ -17,6 +17,6 @@ If you anyway want to install my full configuration do this:
 
 ## Author
 
-Created with :heart: by [Kutu](https://kutu-dev.github.io/)
+Created with :heart: by [Kutu](https://kutu-dev.github.io/).
 > - GitHub - [kutu-dev](https://github.com/kutu-dev)
 > - Twitter - [@kutu_dev](https://twitter.com/kutu_dev)
