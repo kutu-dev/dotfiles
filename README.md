@@ -1,5 +1,5 @@
 # Amazing Kutu's Dotfiles
-My configuration files and workflow for MacOS
+> My configuration files and workflow for Linux/MacOS.
 
 ## Install
 > **Note:** It's **not** recommended to just install my dotfiles without understanding it (just clone this repository and start patiently adding and editing my config to ajust it to your workflow).
