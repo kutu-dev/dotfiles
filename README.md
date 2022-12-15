@@ -20,3 +20,4 @@ If you anyway want to install my full configuration do this:
 Created with :heart: by [Kutu](https://kutu-dev.github.io/).
 > - GitHub - [kutu-dev](https://github.com/kutu-dev)
 > - Twitter - [@kutu_dev](https://twitter.com/kutu_dev)
+
