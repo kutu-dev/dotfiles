@@ -1,0 +1,32 @@
+* {
+    font-family: 'JetBrainsMono Nerd Font Mono';
+}
+
+.powermenu {
+    background: rgba(0, 0, 0, 0);
+
+    button {
+        background-color: #16161E;
+        font-size: 500%;
+    }
+
+    .shutdown {
+        color: #f7768e;
+    }
+
+    .reboot {
+        color: #7aa2f7;
+    }
+
+    .lock {
+        color: #e0af68;
+    }
+
+    .sleep {
+        color: #bb9af7;
+    }
+
+    .logout {
+        color: #9ece6a;
+    }
+}

@@ -1,0 +1,58 @@
+// Rofi configuration
+configuration {
+    // Modes
+    modes: [drun, run, window, file-browser-extended, ssh, web-search];
+
+    // Matching
+    matching: "normal";
+    tokenize: true;
+    normalize-match: true;
+    case-sensitive: false;
+
+    // Run mode
+    terminal: "kitty";
+    run-command: "{cmd}";
+    run-shell-command: "{terminal} --hold {cmd}";
+
+    // SSH mode
+    ssh-client: "kitty +kitten ssh";
+    ssh-command: "{terminal} {ssh-client} {host} [-p {port}]";
+    parse-hosts: true;
+    parse-known-hosts: true;
+
+    // Drun mode
+    drun-display-format: "{name}";
+    drun-url-launcher: "firefox";
+
+    // Window mode
+    window-format: "{w} {t}";
+
+    // Custom keybinding for showing hidden files in file-browser-extended mode
+    kb-custom-2: "Control+H";
+
+    // Style
+    font: "JetBrainsMono Nerd Font Mono 14";
+    icon-theme: "Papirus-Dark";
+    application-fallback-icon: "/home/kutu/picture/profile-picture.png";
+    show-icons: true;
+    scroll-method: 1;
+    markup: true;
+
+    // Display texts
+    display-drun: "";
+    display-run: "";
+    display-window: "";
+    display-file-browser-extended: "";
+    display-ssh: "";
+    display-web-search: "󰖟";
+
+    // Miscellaneous
+    steal-focus: false;
+    timeout {
+      action: "kb-cancel";
+      delay:  10;
+    }
+}
+
+// Rofi theme
+@theme "tokyo-night"

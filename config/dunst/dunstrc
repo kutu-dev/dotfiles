@@ -1,0 +1,132 @@
+[global]
+    # Display
+    follow = mouse
+
+    # Geometry
+    width = (0, 400)
+    origin = top-right
+    offset = 5x5
+    scale = 0
+    notification_limit = 5
+    corner_radius = 5
+
+    # Progress bar
+
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 5
+
+    # Styling
+    icon_corner_radius = 5
+    indicate_hidden = yes
+    transparency = 0
+    separator_height = 0
+    padding = 10
+    horizontal_padding = 10
+    text_icon_padding = 8
+    frame_width = 0
+    gap_size = 5
+
+    # Notifications list
+    sort = yes
+    idle_threshold = 120
+
+    # Text
+    font = Jetbrains Mono Nerd Font 10
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b %p"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = false
+    hide_duplicate_count = true
+    show_indicators = yes
+
+    # Icons
+    enable_recursive_icon_lookup = true
+    icon_theme = Papirus-Dark
+    icon_position = left
+    min_icon_size = 0
+    max_icon_size = 90
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+    # History
+    sticky_history = yes
+    history_length = 20
+
+    # Paths
+    dmenu = /usr/bin/rofi -dmenu -p dunst
+    browser = /usr/bin/xdg-open
+
+    # Miscellaneous
+    
+    always_run_script = true
+    ignore_dbusclose = false
+
+    # Wayland
+    force_xwayland = false
+
+    # Mouse
+    mouse_left_click = close_current
+    mouse_middle_click = context, close_current
+    mouse_right_click = close_all
+
+# Urgency notification types
+[urgency_low]
+    background = "#16161e"
+    foreground = "#a9b1d6"
+    timeout = 10
+
+[urgency_normal]
+    background = "#16161e"
+    foreground = "#a9b1d6"
+    timeout = 10
+
+[urgency_critical]
+    background = "#16161e"
+    foreground = "#f7768e"
+    timeout = 0
+
+# Reproduce notificacion sound
+[play_sound]
+    summary = "*"
+    script = ~/.config/dunst/notification-sound.sh
+
+# Fullscreen
+[fullscreen_delay_everything]
+    fullscreen = delay
+
+[fullscreen_show_critical]
+    msg_urgency = critical
+    fullscreen = show
+
+[openrazer_icon]
+    appname = OpenRazer
+    new_icon = ~/.config/dunst/icons/razer.png
+    max_icon_size = 50
+
+[geary_icon]
+    appname = Geary
+    new_icon = ~/.config/dunst/icons/geary.png
+    max_icon_size = 50
+
+[blueman_icon]
+    appname = blueman
+    new_icon = ~/.config/dunst/icons/blueman.png
+    max_icon_size = 50
+
+[udiskie_icon]
+    appname = udiskie
+    new_icon = ~/.config/dunst/icons/udiskie.png
+    max_icon_size = 50
+
+[supress_nautilus_notification]
+    appname = org.gnome.Nautilus
+    skip_display = true
+    history_ignore = true

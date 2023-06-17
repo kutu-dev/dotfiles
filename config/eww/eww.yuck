@@ -1,0 +1,49 @@
+(defwindow powermenu
+    :monitor 0
+    :geometry (geometry :x "0%"
+                        :y "0%"
+                        :anchor "center"
+                    )
+    :stacking "overlay"
+
+    (box
+        :orientation "horizontal"
+        :halign "center"
+        :width "830"
+        :height "150"
+        :class "powerbox"
+        :spacing "20"
+
+        (button
+            :class "shutdown"
+            :onclick "shutdown now"
+            "⏻"
+        )
+        
+        (button
+            :class "reboot"
+            :onclick "reboot"
+            ""
+        )
+        
+        (button
+            :class "lock"
+            :onclick "${EWW_CMD} close powermenu; swaylock -f --grace 0 &"
+            ""
+        )
+        
+        (button
+            :class "sleep"
+            :onclick "${EWW_CMD} close powermenu"
+            ;; Disabled as suspend crash on Nvidia
+            ;;:onclick "${EWW_CMD} close powermenu; systemctl suspend"
+            ""
+        )
+        
+        (button
+            :class "logout"
+            :onclick "hyprctl dispatch exit"
+            "󰗼"
+        )
+    )
+)

@@ -1,0 +1,3 @@
+notifications:
+  device_added: false
+  device_removed: false

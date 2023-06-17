@@ -1,0 +1,153 @@
+{
+    "layer": "top",
+    "modules-left": ["wlr/workspaces", "custom/wallpaper", "custom/spotify"],
+    "modules-right": ["custom/caffeine", "custom/packages-icon", "custom/pacman-text", "custom/paru-text", "custom/flatpak-text", "pulseaudio#output-icon", "pulseaudio#output-text", "pulseaudio#input-icon","pulseaudio#input-text","network#icon", "network#text", "clock", "custom/powermenu"],
+    "margin-top": 5,
+    "margin-left": 5,
+    "margin-right": 5,
+    
+
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": []
+        },
+        "format-icons": {
+            "1": "󰈹",
+            "2": "",
+            "3": "󰨞",
+            "4": "󰙯",
+            "5": "",
+            "6": "󰓓",
+            "7": "󰸴"
+        }
+    },
+
+    "custom/wallpaper": {
+        "format": "",
+        "on-click" : "swww img ~/pictures/wallpapers/$(ls ~/pictures/wallpapers | sort -R | head -1) -t grow --transition-pos 303,1054",
+        "tooltip": false
+    },
+
+    "custom/spotify": {
+        "format": "󰎈 {}",
+        "escape": true,
+        "return-type": "json",
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-right": "hyprctl dispatch workspace $(hyprctl -j clients | jaq '.[] | select(.initialTitle==\"Spotify\") | .workspace.id' | head -n 1)",
+        "smooth-scrolling-threshold": 1, 
+        "on-scroll-up" : "playerctl -p spotify next",
+        "on-scroll-down" : "playerctl -p spotify previous",
+        "exec": "~/.config/waybar/scripts/mediaplayer.py --player spotify 2> /dev/null",
+        "exec-if": "pgrep spotify",
+        "tooltip": false
+    },
+
+    "custom/caffeine": {
+        "format": "{}",
+        "tooltip": false,
+        "interval": "once",
+        "exec": "~/.config/waybar/scripts/caffeine.sh 2> /dev/null",
+        "on-click": "sh ~/.config/hypr/scripts/caffeine-toggle.sh",
+        "signal": 9
+    },
+
+    
+    "custom/packages-icon": {
+        "format": "󰏗",
+        "tooltip": false,
+        "on-click": "kitty --class 'update-prompt' update-prompt; pkill -SIGRTMIN+8 waybar"
+    },
+
+    "custom/pacman-text": {
+        "format": "{}p",
+        "tooltip": false,
+        "interval": 3600,
+        "exec": "checkupdates | wc -l",
+        "on-click": "kitty --class 'update-prompt' update-prompt; pkill -SIGRTMIN+8 waybar",
+        "signal": 8
+    },
+
+    "custom/paru-text": {
+        "format": "{}a",
+        "tooltip": false,
+        "interval": 3600,
+        "exec": "paru -Qua | wc -l",
+        "on-click": "kitty --class 'update-prompt' update-prompt; pkill -SIGRTMIN+8 waybar",
+        "signal": 8
+    },
+
+    "custom/flatpak-text": {
+        "format": "{}f",
+        "tooltip": false,
+        "interval": 3600,
+        "exec": "flatpak remote-ls --updates | wc -l",
+        "on-click": "kitty --class 'update-prompt' update-prompt; pkill -SIGRTMIN+8 waybar",
+        "signal": 8
+    },
+
+    "clock": {
+        "tooltip-format": "{:%A %d %B %Y | %H:%M}",
+        "format": "{:%H:%M}",
+        "interval": 1
+    },
+
+    "pulseaudio#output-icon": {
+        "format": "󰋋",
+        "format-muted": "󰟎",
+        "on-click": "pavucontrol"
+    },
+
+    "pulseaudio#output-text": {
+        "format": "{volume}%",
+        "format-muted": "",
+        "on-click": "pavucontrol"
+    },
+
+    "pulseaudio#input-icon": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "pavucontrol"
+    },
+
+    "pulseaudio#input-text": {
+        "format": "{format_source}",
+        "format-source": "{volume}%",
+        "format-source-muted": "",
+        "on-click": "pavucontrol"
+    },
+
+    "network#icon": {
+        "format": "⚠",
+        "format-ethernet": "󰈀",
+        "format-wifi": "󰖩",
+        "format-disconnected": "⚠",
+        "on-click": "killall nm-connection-editor; nm-connection-editor",
+        "tooltip": false
+    },
+
+    "network#text": {
+        "format": "Disabled",
+        "format-ethernet": "Wired",
+        "format-wifi": "{essid}",
+        "format-disconnected": "Disconnected",
+        "on-click": "killall nm-connection-editor; nm-connection-editor",
+        "tooltip": false
+    },
+
+    "custom/powermenu": {
+        "format":"⏻",
+        "on-click": "eww open --toggle powermenu",
+        "tooltip": false
+    }
+
+
+}

@@ -1,0 +1,49 @@
+# Options
+ignore-empty-password
+fade-in=0.4
+grace=60
+
+# Appearance
+indicator
+
+clock
+timestr=%H:%M
+datestr=
+
+color=#00000000
+screenshots
+
+font=JetBrainsMono Nerd Font Mono
+
+effect-blur=7x5
+effect-scale=0.7
+
+indicator-radius=120
+indicator-thickness=15
+
+# Colors
+text-color=#7AA2F7
+key-hl-color=#7AA2F7
+bs-hl-color=#ff9e64
+
+text-color=#7AA2F7
+text-clear-color=#ff9e64
+text-ver-color=#bb9af7
+text-wrong-color=#f7768e
+
+inside-color=#1A1B26
+inside-clear-color=#1A1B26
+inside-ver-color=#1A1B26
+inside-wrong-color=#1A1B26
+
+line-color=#00000000
+line-clear-color=#00000000
+line-ver-color=#00000000
+line-wrong-color=#00000000
+
+separator-color=#00000000
+
+ring-color=#16161E
+ring-clear-color=#ff9e64
+ring-ver-color=#bb9af7
+ring-wrong-color=#f7768e

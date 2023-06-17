@@ -1,0 +1,99 @@
+# Per module configuration
+
+[username]
+show_always = true
+
+[directory]
+read_only = " "
+truncation_symbol = "…/"
+
+[character]
+success_symbol = '[ ❯](bold green)'
+error_symbol = '[ ❯](bold red)'
+vimcmd_symbol = '[ ❮](bold green)'
+vimcmd_replace_one_symbol = '[ ❮](bold purple)'
+vimcmd_replace_symbol = '[ ❮](bold blue)'
+vimcmd_visual_symbol = '[ ❮](bold yellow)'
+
+# Nerd font icons
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "

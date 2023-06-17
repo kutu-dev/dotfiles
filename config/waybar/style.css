@@ -1,0 +1,116 @@
+@define-color foreground #a9b1d6;
+@define-color background #16161e;
+@define-color accent #24283b;
+@define-color selected #7aa2f7;
+
+* {
+  font-family: 'JetBrainsMono Nerd Font Mono';
+  font-size: 13px;
+  color: @foreground;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+.modules-left, .modules-right {
+  background-color: @background;
+  border-radius: 5px;
+}
+
+#workspaces button {
+  padding: 0px 10px;
+  background-color: @background;
+  border: solid 2px @background;
+  border-radius: 5px;
+}
+
+#workspaces button label{
+  font-size: 25px;
+}
+
+#workspaces button.active {
+  border: solid 2px @selected;
+  background-color: @selected;
+
+}
+
+#workspaces button.active label {
+  color: @background;
+}
+
+#custom-wallpaper {
+  font-size: 25px;
+  margin: 0 15px;
+}
+
+#custom-spotify {
+  font-size: 14px;
+  margin-right: 18px;
+  margin-left: 10px;
+}
+
+#custom-caffeine {
+  font-size: 23px;
+  padding-left: 18px;
+}
+
+#custom-packages-icon {
+  font-size: 18px;
+  padding-left: 17px;
+  margin-right: 5px;
+}
+
+#custom-pacman-text {
+  font-size: 14px;
+}
+
+#custom-paru-text {
+  font-size: 14px;
+  margin: 0 5px;
+}
+
+#custom-flatpak-text {
+  font-size: 14px;
+}
+
+#pulseaudio.output-icon{
+  margin: 0 0 0 15px;
+  font-size: 18px;
+}
+
+#pulseaudio.output-text{
+  font-size: 14px;
+  margin: 0 10px 0 5px;
+}
+
+#pulseaudio.input-icon{
+  font-size: 18px;
+}
+
+#pulseaudio.input-text{
+  font-size: 14px;
+  margin: 0 15px 0 5px;
+}
+
+#network.icon {
+  font-size: 20px;
+}
+
+#network.text {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+#clock {
+  font-size: 14px;
+  margin: 0 15px;
+}
+
+#custom-powermenu {
+  background-color: @accent;
+  background-size: cover;
+  padding: 0px 15px;
+  font-size: 20px;
+  border-radius: 5px;
+}
