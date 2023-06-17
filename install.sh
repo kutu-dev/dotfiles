@@ -45,7 +45,7 @@ sudo pacman -S --needed --no-confirm base-devel git greetd wl-clipboard pipewire
 # makepkg -si
 
 # Install paru packages
-paru -S --needed --no-confirm hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git
+paru -S --needed --no-confirm --skipreview hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
