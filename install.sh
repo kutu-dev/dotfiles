@@ -37,7 +37,7 @@ temporal_dir=$(mktemp -d) || exit 1
 cd $temporal_dir
 
 # Install pacman packages
-sudo pacman -S --needed base-devel git greetd wl-clipboard pipewire wireplumber gnome-keyring polkit-kde-agent udiskie dunst swayidle waybar geary qt5-wayland qt6-wayland
+sudo pacman -S --needed base-devel git greetd wl-clipboard pipewire wireplumber gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland
 
 # # Install paru
 # git clone https://aur.archlinux.org/paru.git
@@ -45,7 +45,7 @@ sudo pacman -S --needed base-devel git greetd wl-clipboard pipewire wireplumber 
 # makepkg -si
 
 # Install paru packages
-paru -S --needed hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects
+paru -S --needed hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
