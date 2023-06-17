@@ -55,3 +55,6 @@ cp -r dotfiles/home/kutu/.config/* $config_dir
 sudo cp -r dotfiles/boot/grub/* /boot/grub
 sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/tokyo-night/theme.txt\"")} 1' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+# Start systemd services
+sudo systemctl enable greetd.service
