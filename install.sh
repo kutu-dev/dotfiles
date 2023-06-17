@@ -14,37 +14,43 @@ cat <<"END_ASCII"
     By Kutu - Version 0.1.0
 END_ASCII
 
-while true; do
-    echo -n "Do you want to start with the installation? (Y/n) "
-    read
-    read start_installation_prompt
+#TODO REMEMBER TO MOUNT WINDOWS EFI PARTITION IN /MNT BEFORE
+# Not working when downloading with curl
 
-    # User input to lowercase
-    start_installation_prompt=$(echo "$start_installation_prompt" | tr "[:upper:]" "[:lower:]")
+# while true; do
+#     echo -n "Do you want to start with the installation? (Y/n) "
+#     read start_installation_prompt
 
-    if [[ $start_installation_prompt == "" || $start_installation_prompt == "y" || $start_installation_prompt == "yes" ]]; then
-        break
-    elif [[ $start_installation_prompt == "n" || $start_installation_prompt == "no" ]]; then
-        exit 0
-    fi
+#     # User input to lowercase
+#     start_installation_prompt=$(echo "$start_installation_prompt" | tr "[:upper:]" "[:lower:]")
 
-done
+#     if [[ $start_installation_prompt == "" || $start_installation_prompt == "y" || $start_installation_prompt == "yes" ]]; then
+#         break
+#     elif [[ $start_installation_prompt == "n" || $start_installation_prompt == "no" ]]; then
+#         exit 0
+#     fi
+
+# done
 
 trap 'rm -drf "$temporal_dir"' EXIT
 temporal_dir=$(mktemp -d) || exit 1
-cd $temporal_dir/
+cd $temporal_dir
 
 # Install pacman packages
 sudo pacman -S --needed base-devel git
 
-# Install paru
-echo git clone https://aur.archlinux.org/paru.git
-cd paru/
-makepkg -si
+# # Install paru
+# git clone https://aur.archlinux.org/paru.git
+# cd paru/
+# makepkg -si
 
 # Install paru packages
 paru -S --needed PAQUETES
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
-cp dotfiles/config/* $config_dir/
+cp -r dotfiles/config/* $config_dir
+
+# Apply GRUB theme
+sudo cp -r dotfiles/grub/* /boot/grub
+sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/tokyo-night/theme.txt\"")} 1' /etc/default/grub

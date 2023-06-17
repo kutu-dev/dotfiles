@@ -1,0 +1,32 @@
+title-text: "Entering NERV headquarters"
+title-font: "Victor's Pixel Font Regular 32"
+title-color: "#A9B1D6"
+desktop-image: "background.png"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+terminal-border: "0"
+
++ boot_menu {
+  left = 30%
+  top = 45%
+  width = 70%
+  height = 50%
+  item_font = "Victor's Pixel Font Regular 32"
+  item_color = "#A9B1D6"
+  selected_item_color = "#7AA2F7"
+  item_spacing = 0
+  item_icon_space = 0
+}
+
++ label {
+	width = 50%
+	left = 25%
+        top = 90%
+	font = "Victor's Pixel Font Regular 32"
+	color = "#A9B1D6"
+        id = "__timeout__"
+        text = "Unlocking Terminal Dogma in %ds..."
+	align = "center"
+}
