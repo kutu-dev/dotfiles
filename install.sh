@@ -14,7 +14,7 @@ cat <<"END_ASCII"
     By Kutu - Version 0.1.0
 END_ASCII
 
-#TODO REMEMBER TO MOUNT WINDOWS EFI PARTITION IN /MNT BEFORE
+#TODO REMEMBER TO PRECONFIGURE GRUB
 # Not working when downloading with curl
 
 # while true; do
@@ -37,7 +37,7 @@ temporal_dir=$(mktemp -d) || exit 1
 cd $temporal_dir
 
 # Install pacman packages
-sudo pacman -S --needed base-devel git
+sudo pacman -S --needed base-devel git greetd
 
 # # Install paru
 # git clone https://aur.archlinux.org/paru.git
@@ -49,8 +49,10 @@ paru -S --needed PAQUETES
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
-cp -r dotfiles/config/* $config_dir
+cp -r dotfiles/home/.config/* $config_dir
 
 # Apply GRUB theme
 sudo cp -r dotfiles/grub/* /boot/grub
 sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/tokyo-night/theme.txt\"")} 1' /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+

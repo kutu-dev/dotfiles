@@ -7,17 +7,27 @@ else
 fi
 
 # Copy dotfiles from XDG_CONFIG_HOME
-rm -r config
-mkdir config
+rm -rf home
 
 config_subdirectories="fish kitty dunst eww gamemode.ini hypr kitty Kvantum neofetch rofi starship.toml swayidle swaylock udiskie waybar"
 
 for subdirectory in $config_subdirectories; do
-    cp -r $config_dir/$subdirectory config
+    cp -r --parents $config_dir/$subdirectory .
 done
 
 # Copy GRUB themes
-rm -r grub
-mkdir -p grub/themes
+rm -rf boot
 
-cp -r /boot/grub/themes/* grub/themes
+cp -r --parents /boot/grub/themes/* .
+
+# Copy /etc config files
+rm -rf etc
+
+etc_subdirectories="greetd pam.d/greetd"
+
+for subdirectory in $etc_subdirectories; do
+    cp -r --parents /etc/$subdirectory .
+done
+
+# Copy hacky fix for tuigreet
+cp -r --parents /usr/lib/systemd/system/greetd.service.d/00-nobleed.conf .
