@@ -1,5 +1,13 @@
 #!/usr/bin/env sh
 
+sleep 1
+
+if [[ -z $XDG_CONFIG_HOME ]]; then
+    config_dir="$HOME/.config"
+else
+    config_dir=$XDG_CONFIG_HOME
+fi
+
 cat <<"END_ASCII"
   ___   _   _    ___ ___ ___  __  __ ___   ___         _        _ _          
  / __| /_\ | |  |_ _/ __/ _ \|  \/  | _ \ |_ _|_ _  __| |_ __ _| | |___ _ _ 
@@ -25,14 +33,14 @@ done
 
 trap 'rm -drf "$temporal_dir"' EXIT
 temporal_dir=$(mktemp -d) || exit 1
-cd $temporal_dir
+cd $temporal_dir/
 
 # Install pacman packages
 sudo pacman -S --needed base-devel git
 
 # Install paru
 echo git clone https://aur.archlinux.org/paru.git
-cd paru
+cd paru/
 makepkg -si
 
 # Install paru packages
@@ -40,4 +48,4 @@ paru -S --needed PAQUETES
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
-cp dotfiles/config/* ~/.cconfig/
+cp dotfiles/config/* $config_dir/
