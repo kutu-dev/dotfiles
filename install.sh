@@ -49,9 +49,9 @@ paru -S --needed PAQUETES
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
-cp -r dotfiles/home/.config/* $config_dir
+cp -r dotfiles/home/kutu/.config/* $config_dir
 
 # Apply GRUB theme
-sudo cp -r dotfiles/grub/* /boot/grub
+sudo cp -r dotfiles/boot/grub/* /boot/grub
 sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/tokyo-night/theme.txt\"")} 1' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
