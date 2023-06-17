@@ -40,4 +40,4 @@ paru -S --needed PAQUETES
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
-
+cp dotfiles/config/* ~/.cconfig/
