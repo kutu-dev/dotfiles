@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-sleep 1
-
 if [[ -z $XDG_CONFIG_HOME ]]; then
     config_dir="$HOME/.config"
 else
@@ -18,6 +16,7 @@ END_ASCII
 
 while true; do
     echo -n "Do you want to start with the installation? (Y/n) "
+    read
     read start_installation_prompt
 
     # User input to lowercase
