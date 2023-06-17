@@ -37,14 +37,19 @@ temporal_dir=$(mktemp -d) || exit 1
 cd $temporal_dir
 
 # Install pacman packages
-sudo pacman -S --needed --noconfirm base-devel git greetd wl-clipboard pipewire wireplumber gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland
+sudo pacman -Syu
+sudo pacman -S --needed --noconfirm base-devel git greetd wl-clipboard pipewire wireplumber gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland xdg-user-dirs
 
-# # Install paru
-# git clone https://aur.archlinux.org/paru.git
-# cd paru/
-# makepkg -si
+# Install paru
+
+if ! command -v paru &> /dev/null; then
+    git clone https://aur.archlinux.org/paru.git
+    cd paru/
+    makepkg -si
+fi
 
 # Install paru packages
+paru -Syu
 paru -S --needed --noconfirm --skipreview hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git
 
 # Clone and apply dotfiles
@@ -58,3 +63,6 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Start systemd services
 sudo systemctl enable greetd.service
+
+# Create default user directories
+xdg-user-dirs-update
