@@ -63,7 +63,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 # Start systemd services
 sudo systemctl enable greetd
 sudo systemctl enable NetworkManager
-sudo sysyemctl enable pipewire-pulse
+sudo systemctl enable pipewire-pulse
 
 # Create default user directories
 mkdir -p ~/desktop
