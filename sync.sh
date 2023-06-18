@@ -15,6 +15,9 @@ for subdirectory in $config_subdirectories; do
     cp -r --parents $config_dir/$subdirectory .
 done
 
+# Copy rofi theme
+cp -r --parents ~/.local/share/rofi/themes/tokyo-night.rasi .
+
 # Copy GRUB themes
 rm -rf boot
 

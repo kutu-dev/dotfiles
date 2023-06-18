@@ -1,11 +1,5 @@
 #!/usr/bin/env sh
 
-if [[ -z $XDG_CONFIG_HOME ]]; then
-    config_dir="$HOME/.config"
-else
-    config_dir=$XDG_CONFIG_HOME
-fi
-
 cat <<"END_ASCII"
   ___   _   _    ___ ___ ___  __  __ ___   ___         _        _ _          
  / __| /_\ | |  |_ _/ __/ _ \|  \/  | _ \ |_ _|_ _  __| |_ __ _| | |___ _ _ 
@@ -34,7 +28,7 @@ cd $temporal_dir
 
 # Install pacman packages
 sudo pacman -Syu
-sudo pacman -S base-devel git ttf-jetbrains-mono-nerd kitty greetd greetd-tuigreet wl-clipboard pipewire pipewire-alsa pipewire-pulse pipewire-jack pipewire-audio wireplumber rofimoji gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland xdg-user-dirs networkmanager gamemode
+sudo pacman -S base-devel git ttf-jetbrains-mono-nerd kitty greetd greetd-tuigreet wl-clipboard pipewire pipewire-alsa pipewire-pulse pipewire-jack pipewire-audio wireplumber gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland xdg-user-dirs networkmanager gamemode
 
 # Install paru
 
@@ -48,12 +42,11 @@ fi
 
 # Install paru packages
 paru -Syu
-paru -S hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git rofi-file-browser-extended-git 
+paru -S hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git rofi-file-browser-extended-git rofimoji-git
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
-mkdir -p $config_dir
-cp -r dotfiles/home/kutu/.config/* $config_dir
+cp -r dotfiles/home/kutu/* $HOME
 
 # Apply GRUB theme
 sudo cp -r dotfiles/boot/grub/* /boot/grub
