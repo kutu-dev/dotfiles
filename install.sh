@@ -61,7 +61,7 @@ sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/tokyo-n
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Apply /etc configs
-sudo cp -r dotfiles/etc /etc
+sudo cp -r dotfiles/etc/* /etc
 
 # Start systemd services
 sudo systemctl enable greetd
