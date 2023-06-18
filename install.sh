@@ -46,15 +46,15 @@ paru -S hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git ar
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
-cp -r dotfiles/home/kutu/* $HOME
+cp -r dotfiles/home/kutu $HOME
 
 # Apply GRUB theme
-sudo cp -r dotfiles/boot/grub/* /boot/grub
+sudo cp -r dotfiles/boot/grub /boot/grub
 sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/calicomp/theme.txt\"")} 1' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Apply /etc configs
-sudo cp -r dotfiles/etc/* /etc
+sudo cp -r dotfiles/etc /etc
 
 # Start systemd services
 sudo systemctl enable greetd
