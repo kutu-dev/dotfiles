@@ -60,10 +60,13 @@ sudo cp -r dotfiles/boot/grub/* /boot/grub
 sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/tokyo-night/theme.txt\"")} 1' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
+# Apply /etc configs
+sudo cp -r dotfiles/etc /etc
+
 # Start systemd services
 sudo systemctl enable greetd
 sudo systemctl enable NetworkManager
-systemctl enable --user pipewire-pulse
+<2systemctl enable --user pipewire-pulse
 
 # Create default user directories
 mkdir -p ~/desktop
