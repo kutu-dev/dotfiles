@@ -52,7 +52,7 @@ fi
 
 # Install paru packages
 paru -Syu
-paru -S hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git
+paru -S hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
