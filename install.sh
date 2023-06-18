@@ -66,7 +66,7 @@ sudo cp -r dotfiles/etc /etc
 # Start systemd services
 sudo systemctl enable greetd
 sudo systemctl enable NetworkManager
-<2systemctl enable --user pipewire-pulse
+systemctl enable --user pipewire-pulse
 
 # Create default user directories
 mkdir -p ~/desktop
