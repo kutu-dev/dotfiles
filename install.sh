@@ -14,23 +14,19 @@ cat <<"END_ASCII"
     By Kutu - Version 0.1.0
 END_ASCII
 
-#TODO REMEMBER TO PRECONFIGURE GRUB
-# Not working when downloading with curl
+while true; do
+    echo -n "Do you want to start with the installation? (Y/n) "
+    read start_installation_prompt
 
-# while true; do
-#     echo -n "Do you want to start with the installation? (Y/n) "
-#     read start_installation_prompt
+    # User input to lowercase
+    start_installation_prompt=$(echo "$start_installation_prompt" | tr "[:upper:]" "[:lower:]")
 
-#     # User input to lowercase
-#     start_installation_prompt=$(echo "$start_installation_prompt" | tr "[:upper:]" "[:lower:]")
-
-#     if [[ $start_installation_prompt == "" || $start_installation_prompt == "y" || $start_installation_prompt == "yes" ]]; then
-#         break
-#     elif [[ $start_installation_prompt == "n" || $start_installation_prompt == "no" ]]; then
-#         exit 0
-#     fi
-
-# done
+    if [[ $start_installation_prompt == "" || $start_installation_prompt == "y" || $start_installation_prompt == "yes" ]]; then
+        break
+    elif [[ $start_installation_prompt == "n" || $start_installation_prompt == "no" ]]; then
+        exit 0
+    fi
+done
 
 trap 'rm -drf "$temporal_dir"' EXIT
 temporal_dir=$(mktemp -d) || exit 1
@@ -38,7 +34,7 @@ cd $temporal_dir
 
 # Install pacman packages
 sudo pacman -Syu
-sudo pacman -S base-devel git greetd wl-clipboard pipewire wireplumber gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland xdg-user-dirs networkmanager gamemode
+sudo pacman -S base-devel git greetd wl-clipboard pipewire pipewire-alse pipewire-pulse pipewire-jack pipewire-audio wireplumber gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland xdg-user-dirs networkmanager gamemode
 
 # Install paru
 
@@ -67,6 +63,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 # Start systemd services
 sudo systemctl enable greetd
 sudo systemctl enable NetworkManager
+sudo sysyemctl enable pipewire-pulse
 
 # Create default user directories
 mkdir -p ~/desktop
