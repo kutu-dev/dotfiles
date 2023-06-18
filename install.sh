@@ -62,7 +62,8 @@ sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/tokyo-n
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Start systemd services
-sudo systemctl enable greetd.service
+sudo systemctl enable greetd
+sudo systemctl enable NetworkManager
 
 # Create default user directories
 xdg-user-dirs-update
