@@ -69,4 +69,12 @@ sudo systemctl enable greetd
 sudo systemctl enable NetworkManager
 
 # Create default user directories
+mkdir -p ~/desktop
+mkdir -p ~/downloads
+mkdir -p ~/templates
+mkdir -p ~/public
+mkdir -p ~/documents
+mkdir -p ~/music
+mkdir -p ~/pictures
+mkdir -p ~/videos
 xdg-user-dirs-update
