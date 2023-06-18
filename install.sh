@@ -43,9 +43,11 @@ sudo pacman -S --needed --noconfirm base-devel git greetd wl-clipboard pipewire 
 # Install paru
 
 if ! command -v paru &> /dev/null; then
+    sudo pacman -S --needed --noconfirm cargo
     git clone https://aur.archlinux.org/paru.git
     cd paru/
     makepkg -si
+    sudo pacman -Runs cargo
 fi
 
 # Install paru packages
