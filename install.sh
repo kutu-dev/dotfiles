@@ -38,7 +38,7 @@ cd $temporal_dir
 
 # Install pacman packages
 sudo pacman -Syu
-sudo pacman -S --needed --noconfirm base-devel git greetd wl-clipboard pipewire wireplumber gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland xdg-user-dirs networkmanager gamemode
+sudo pacman -S base-devel git greetd wl-clipboard pipewire wireplumber gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland xdg-user-dirs networkmanager gamemode
 
 # Install paru
 
@@ -52,7 +52,7 @@ fi
 
 # Install paru packages
 paru -Syu
-paru -S --needed --noconfirm --skipreview hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git
+paru -S hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
