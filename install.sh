@@ -34,7 +34,7 @@ cd $temporal_dir
 
 # Install pacman packages
 sudo pacman -Syu
-sudo pacman -S base-devel git greetd wl-clipboard pipewire pipewire-alse pipewire-pulse pipewire-jack pipewire-audio wireplumber gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland xdg-user-dirs networkmanager gamemode
+sudo pacman -S base-devel git ttf-jetbrains-mono-nerd kitty greetd greetd-tuigreet wl-clipboard pipewire pipewire-alse pipewire-pulse pipewire-jack pipewire-audio wireplumber rofimoji gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland xdg-user-dirs networkmanager gamemode
 
 # Install paru
 
@@ -48,7 +48,7 @@ fi
 
 # Install paru packages
 paru -Syu
-paru -S hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git
+paru -S hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git rofi-file-browser-extended-git 
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
@@ -57,7 +57,7 @@ cp -r dotfiles/home/kutu/.config/* $config_dir
 
 # Apply GRUB theme
 sudo cp -r dotfiles/boot/grub/* /boot/grub
-sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/tokyo-night/theme.txt\"")} 1' /etc/default/grub
+sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/calicomp/theme.txt\"")} 1' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Apply /etc configs
