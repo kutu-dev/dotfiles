@@ -56,6 +56,7 @@ paru -S --needed --noconfirm --skipreview hyprland-nvidia-git ttf-ms-win11-auto 
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
+mkdir -p $config_dir
 cp -r dotfiles/home/kutu/.config/* $config_dir
 
 # Apply GRUB theme
