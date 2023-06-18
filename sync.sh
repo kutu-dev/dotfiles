@@ -9,7 +9,7 @@ fi
 # Copy dotfiles from XDG_CONFIG_HOME
 rm -rf home
 
-config_subdirectories="fish kitty dunst eww gamemode.ini hypr kitty Kvantum neofetch rofi starship.toml swayidle swaylock udiskie waybar"
+config_subdirectories="fish kitty dunst eww gamemode.ini hypr kitty Kvantum neofetch rofi starship.toml swayidle swaylock udiskie waybar user-dirs.dirs"
 
 for subdirectory in $config_subdirectories; do
     cp -r --parents $config_dir/$subdirectory .
