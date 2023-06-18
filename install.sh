@@ -34,7 +34,7 @@ cd $temporal_dir
 
 # Install pacman packages
 sudo pacman -Syu
-sudo pacman -S base-devel git ttf-jetbrains-mono-nerd kitty greetd greetd-tuigreet wl-clipboard pipewire pipewire-alse pipewire-pulse pipewire-jack pipewire-audio wireplumber rofimoji gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland xdg-user-dirs networkmanager gamemode
+sudo pacman -S base-devel git ttf-jetbrains-mono-nerd kitty greetd greetd-tuigreet wl-clipboard pipewire pipewire-alsa pipewire-pulse pipewire-jack pipewire-audio wireplumber rofimoji gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland xdg-user-dirs networkmanager gamemode
 
 # Install paru
 
