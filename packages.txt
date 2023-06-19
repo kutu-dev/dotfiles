@@ -57,3 +57,4 @@ noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 papirus-icon-theme
+imagemagick
