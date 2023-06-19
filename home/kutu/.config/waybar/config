@@ -63,7 +63,7 @@
     "custom/packages-icon": {
         "format": "󰏗",
         "tooltip": false,
-        "on-click": "kitty --class 'update-prompt' update-prompt; pkill -SIGRTMIN+8 waybar"
+        "on-click": "kitty --class 'update-prompt' ~/.config/waybar/scripts/update-prompt.sh; pkill -SIGRTMIN+8 waybar"
     },
 
     "custom/pacman-text": {
@@ -71,7 +71,7 @@
         "tooltip": false,
         "interval": 3600,
         "exec": "checkupdates | wc -l",
-        "on-click": "kitty --class 'update-prompt' update-prompt; pkill -SIGRTMIN+8 waybar",
+        "on-click": "kitty --class 'update-prompt' ~/.config/waybar/scripts/update-prompt.sh; pkill -SIGRTMIN+8 waybar",
         "signal": 8
     },
 
@@ -80,7 +80,7 @@
         "tooltip": false,
         "interval": 3600,
         "exec": "paru -Qua | wc -l",
-        "on-click": "kitty --class 'update-prompt' update-prompt; pkill -SIGRTMIN+8 waybar",
+        "on-click": "kitty --class 'update-prompt' ~/.config/waybar/scripts/update-prompt.sh; pkill -SIGRTMIN+8 waybar",
         "signal": 8
     },
 
@@ -89,7 +89,7 @@
         "tooltip": false,
         "interval": 3600,
         "exec": "flatpak remote-ls --updates | wc -l",
-        "on-click": "kitty --class 'update-prompt' update-prompt; pkill -SIGRTMIN+8 waybar",
+        "on-click": "kitty --class 'update-prompt' ~/.config/waybar/scripts/update-prompt.sh; pkill -SIGRTMIN+8 waybar",
         "signal": 8
     },
 

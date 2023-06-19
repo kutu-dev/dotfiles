@@ -63,6 +63,15 @@ cp -r dotfiles/home/kutu/.config/* $config_dir
 mkdir -p  $local_dir
 cp -r dotfiles/home/kutu/.local/* $local_dir
 
+# Add user profile picture
+cp -r dotfiles/home/kutu/.face ~
+
+# Apply GTK themes
+cp -r dotfiles/home/kutu/.themes ~
+
+# Apply GTK 4 theme
+cp -r dotfiles/home/kutu/.themes/tokyo-night/gtk-4.0 $config_dir
+
 # Apply GRUB theme
 sudo cp -r dotfiles/boot/grub/* /boot/grub
 sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/calicomp/theme.txt\"")} 1' /etc/default/grub

@@ -48,6 +48,7 @@ sox
 opusfile
 steam
 spotify
+spicetify-cli
 vscodium-bin
 vscodium-bin-features
 vscodium-bin-marketplace
@@ -55,3 +56,4 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
+papirus-icon-theme
