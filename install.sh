@@ -36,25 +36,23 @@ done
 
 trap 'rm -drf "$temporal_dir"' EXIT
 temporal_dir=$(mktemp -d) || exit 1
-cd $temporal_dir
 
-# Install pacman packages
-#sudo pacman -Syu
-#sudo pacman -S base-devel git ttf-jetbrains-mono-nerd kitty greetd greetd-tuigreet wl-clipboard pipewire pipewire-alsa pipewire-pulse pipewire-jack pipewire-audio wireplumber gnome-keyring polkit-kde-agent udiskie dunst swayidle geary qt5-wayland qt6-wayland xdg-user-dirs networkmanager gamemode
+cp packages.txt $temporal_dir
+cd $temporal_dir
 
 # Install paru
 
 if ! command -v paru &> /dev/null; then
-    sudo pacman -S --needed --noconfirm cargo
+    sudo pacman -S base-devel cargo
     git clone https://aur.archlinux.org/paru.git
     cd paru/
     makepkg -si
     sudo pacman -Runs cargo
 fi
 
-# Install paru packages
-#paru -Syu
-#paru -S hyprland-nvidia-git ttf-ms-win11-auto xdg-desktop-portal-hyprland-git arrpc eww-wayland rofi-lbonn-wayland-git swaylock-effects waybar-hyprland-git rofi-file-browser-extended-git rofimoji-git
+# Install all packages
+paru -Syu
+sudo paru -S $(awk '{print $1}' packages.txt)
 
 # Clone and apply dotfiles
 git clone https://github.com/kutu-dev/dotfiles.git
@@ -66,12 +64,14 @@ mkdir -p  $local_dir
 cp -r dotfiles/home/kutu/.local/* $local_dir
 
 # Apply GRUB theme
-sudo cp -r dotfiles/boot/grub /boot/grub
+sudo cp -r dotfiles/boot/grub/* /boot/grub
 sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/calicomp/theme.txt\"")} 1' /etc/default/grub
+sudo awk -i inplace '/GRUB_THEME=/ {gsub("#", "")} 1' /etc/default/grub
+sudo awk -i inplace '/GRUB_CMDLINE_LINUX_DEFAULT=/ {gsub("quiet", "")} {gsub("loglevel=3", "loglevel=4")} 1' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Apply /etc configs
-sudo cp -r dotfiles/etc /etc
+sudo cp -r dotfiles/etc/* /etc
 
 # Start systemd services
 sudo systemctl enable greetd
@@ -88,3 +88,6 @@ mkdir -p ~/music
 mkdir -p ~/pictures
 mkdir -p ~/videos
 xdg-user-dirs-update
+
+# I don't know why this is installed
+sudo pacman -Runs xdg-desktop-portal-kde
