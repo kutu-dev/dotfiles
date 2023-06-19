@@ -100,3 +100,6 @@ xdg-user-dirs-update
 
 # I don't know why this is installed
 sudo pacman -Runs xdg-desktop-portal-kde
+
+# Add wallpapers
+cp -r --parents dotfiles/home/kutu/pictures/wallpapers ~/pictures/
