@@ -58,3 +58,5 @@ noto-fonts-emoji
 noto-fonts-extra
 papirus-icon-theme
 imagemagick
+base16-vtrgb
+mkinitcpio-numlock

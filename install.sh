@@ -103,3 +103,8 @@ sudo pacman -Runs xdg-desktop-portal-kde
 
 # Add wallpapers
 cp -r dotfiles/home/kutu/pictures/wallpapers ~/pictures
+
+# Add custom mkinitcpio hooks and modules
+sudo sed -i '/^HOOKS=/ s/keymap/keymap setvtrgb consolefont numlock/g' /etc/mkinitcpio.conf
+sudo sed -i '/^MODULES=/ s/(/(nvidia nvidia_modeset nvidia_uvm nvidia_drm/g' /etc/mkinitcpio.conf
+sudo mkinitcpio -p linux

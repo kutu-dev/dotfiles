@@ -35,7 +35,7 @@ cp -r --parents /boot/grub/themes/* .
 # Copy /etc config files
 rm -rf etc
 
-etc_subdirectories="greetd pam.d/greetd"
+etc_subdirectories="greetd pam.d/greetd vtrgb"
 
 for subdirectory in $etc_subdirectories; do
     cp -r --parents /etc/$subdirectory .
