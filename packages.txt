@@ -1,3 +1,6 @@
+nvidia
+libva-nvidia-driver
+lib32-nvidia-utils
 hyprland-nvidia-git
 ttf-ms-win11-auto
 xdg-desktop-portal-hyprland-git

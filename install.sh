@@ -50,6 +50,9 @@ if ! command -v paru &> /dev/null; then
     sudo pacman -Runs cargo
 fi
 
+# Active multilib repository
+sudo sed -i '/\[multilib\]/ {s/#//g;n;s/#//g}' /etc/pacman.conf
+
 # Install all packages
 paru -Syu
 sudo paru -S $(awk '{print $1}' packages.txt)
@@ -74,9 +77,8 @@ cp -r dotfiles/home/kutu/.themes/tokyo-night/gtk-4.0 $config_dir
 
 # Apply GRUB theme
 sudo cp -r dotfiles/boot/grub/* /boot/grub
-sudo awk -i inplace '/GRUB_THEME=/ {gsub(/"[^"]+"/, "\"/boot/grub/themes/calicomp/theme.txt\"")} 1' /etc/default/grub
-sudo awk -i inplace '/GRUB_THEME=/ {gsub("#", "")} 1' /etc/default/grub
-sudo awk -i inplace '/GRUB_CMDLINE_LINUX_DEFAULT=/ {gsub("quiet", "")} {gsub("loglevel=3", "loglevel=4")} 1' /etc/default/grub
+sudo sed -i '/GRUB_THEME/ {s/#//g;s/\/path\/to\/gfxtheme/\/boot\/grub\/themes\/calicomp\/theme.txt/g}' /etc/default/grub
+sudo sed -i '/GRUB_CMDLINE_LINUX_DEFAULT/ s/".*"/"loglevel=4 nvidia_drm.modeset=1"/g' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Apply /etc configs
