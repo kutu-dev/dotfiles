@@ -66,11 +66,20 @@ sudo sed -i '/\[multilib\]/ {s/#//g;n;s/#//g}' /etc/pacman.conf
 paru -Syu
 paru -S $(awk '{print $1}' packages.txt)
 
-# Install Nvidia specific packages
 if [[ $using_nvidia == true ]]; then
+    # Install Nvidia specific packages
     paru -S nvidia libva-nvidia-driver libva lib32-nvidia-utils hyprland-nvidia-git
 else
     paru -S hyprland
+    
+    # Remove unnecessary configurations from Hyprland config
+    sed -e '/#.*Nvidia.*/d' \
+    -e '/.*LIBVA_DRIVER_NAME.*/d' \
+    -e '/.*XDG_SESSION_TYPE.*/d' \
+    -e '/.*GBM_BACKEND.*/d' \
+    -e '/.*__GLX_VENDOR_LIBRARY_NAME.*/d' \
+    -e '/.*WLR_NO_HARDWARE_CURSORS.*/d' \
+    home/kutu/.config/hypr/env.conf
 fi
 
 # Apply the dotfiles
