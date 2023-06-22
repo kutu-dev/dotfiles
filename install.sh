@@ -90,15 +90,15 @@ cp -r home/kutu/* ~
 
 # Apply the dotfiles
 mkdir -p $config_dir
-cp -r dotfiles/home/kutu/.config/* $config_dir
+cp -r home/kutu/.config/* $config_dir
 
 mkdir -p  $local_dir
-cp -r dotfiles/home/kutu/.local/* $local_dir
+cp -r home/kutu/.local/* $local_dir
 
-cp -r dotfiles/home/kutu/.local/* $local_dir
+cp -r home/kutu/.local/* $local_dir
 
 # Apply GTK themes
-cp -r dotfiles/home/kutu/.themes ~
+cp -r home/kutu/.themes ~
 
 # Apply GTK 4 theme
 cp -r home/kutu/.themes/tokyo-night/gtk-4.0 $config_dir
