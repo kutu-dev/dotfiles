@@ -1,6 +1,6 @@
 linux-headers
 ttf-ms-win11-auto
-xdg-desktop-portal-hyprland-git
+xdg-desktop-portal-hyprland
 arrpc
 eww-wayland
 rofi-lbonn-wayland-git
