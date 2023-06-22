@@ -53,11 +53,12 @@ done
 
 # Install paru
 if ! command -v paru &> /dev/null; then
-    sudo pacman -S base-devel cargo
+    sudo pacman -S base-devel rustup
+    rustup default stable
     git clone https://aur.archlinux.org/paru.git
     cd paru/
     makepkg -si
-    sudo pacman -Runs cargo
+    sudo pacman -Runs rustup
     cd ..
 fi
 
