@@ -101,6 +101,7 @@ cp -r home/kutu/.face ~
 
 # Apply GTK themes
 cp -r home/kutu/.themes ~
+cp -r home/kutu/.icons ~
 
 # Apply GTK 4 theme
 cp -r home/kutu/.themes/tokyo-night/gtk-4.0 $config_dir
