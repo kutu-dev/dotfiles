@@ -1,4 +1,5 @@
 linux-headers
+rustup
 ttf-ms-win11-auto
 xdg-desktop-portal-hyprland-git
 arrpc
