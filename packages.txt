@@ -15,7 +15,8 @@ greetd
 greetd-tuigreet
 wl-clipboard
 pipewire
-pipewire-alsa pipewire-pulse
+pipewire-alsa
+pipewire-pulse
 pipewire-jack
 pipewire-audio
 wireplumber
