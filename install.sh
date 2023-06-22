@@ -40,7 +40,7 @@ while true; do
     read using_nvidia_prompt
 
     # User input to lowercase
-    using_nvidi_prompt=$(echo "$using_nvidia_prompt" | tr "[:upper:]" "[:lower:]")
+    using_nvidia_prompt=$(echo "$using_nvidia_prompt" | tr "[:upper:]" "[:lower:]")
 
     if [[ $using_nvidia_prompt == "" || $using_nvidia_prompt == "y" || $using_nvidia_prompt == "yes" ]]; then
         using_nvidia=true
