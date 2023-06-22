@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=Discord
+Comment=Web App
+Exec=sh -c 'XAPP_FORCE_GTKWINDOW_ICON="discord" firefox --class WebApp-Discord0274 --profile /home/kutu/.local/share/ice/firefox/Discord0274 --no-remote "https://discord.com/app"'
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=discord
+Categories=GTK;Network;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Discord0274
+StartupNotify=true
+X-WebApp-Browser=Firefox
+X-WebApp-URL=https://discord.com/app
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=true
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true
+

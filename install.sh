@@ -34,20 +34,29 @@ while true; do
     fi
 done
 
-trap 'rm -drf "$temporal_dir"' EXIT
-temporal_dir=$(mktemp -d) || exit 1
+# Since Nvidia drivers in non Nvidia hardware can crash
+while true; do
+    echo -n "Are you using a Nvidia graphics card? (Y/n) "
+    read using_nvidia_prompt
 
-cp packages.txt $temporal_dir
-cd $temporal_dir
+    # User input to lowercase
+    using_nvidi_prompt=$(echo "$using_nvidia_prompt" | tr "[:upper:]" "[:lower:]")
+
+    if [[ $using_nvidia_prompt == "" || $using_nvidia_prompt == "y" || $using_nvidia_prompt == "yes" ]]; then
+        using_nvidia=true
+    elif [[ $using_nvidia_prompt == "n" || $using_nvidia_prompt == "no" ]]; then
+        using_nvidia=false
+    fi
+done
 
 # Install paru
-
 if ! command -v paru &> /dev/null; then
     sudo pacman -S base-devel cargo
     git clone https://aur.archlinux.org/paru.git
     cd paru/
     makepkg -si
     sudo pacman -Runs cargo
+    cd ..
 fi
 
 # Active multilib repository
@@ -55,34 +64,48 @@ sudo sed -i '/\[multilib\]/ {s/#//g;n;s/#//g}' /etc/pacman.conf
 
 # Install all packages
 paru -Syu
-sudo paru -S $(awk '{print $1}' packages.txt)
+paru -S $(awk '{print $1}' packages.txt)
 
-# Clone and apply dotfiles
-git clone https://github.com/kutu-dev/dotfiles.git
+# Install Nvidia specific packages
+if [[ $using_nvidia == true ]]; then
+    paru -S nvidia libva-nvidia-driver libva lib32-nvidia-utils hyprland-nvidia-git
+else
+    paru -S hyprland
+fi
 
-mkdir -p $config_dir
-cp -r dotfiles/home/kutu/.config/* $config_dir
-
-mkdir -p  $local_dir
-cp -r dotfiles/home/kutu/.local/* $local_dir
-
-# Add user profile picture
-cp -r dotfiles/home/kutu/.face ~
-
-# Apply GTK themes
-cp -r dotfiles/home/kutu/.themes ~
+# Apply the dotfiles
+cp -r home/kutu/* ~
 
 # Apply GTK 4 theme
-cp -r dotfiles/home/kutu/.themes/tokyo-night/gtk-4.0 $config_dir
+cp -r home/kutu/.themes/tokyo-night/gtk-4.0 $config_dir
 
 # Apply GRUB theme
-sudo cp -r dotfiles/boot/grub/* /boot/grub
-sudo sed -i '/GRUB_THEME/ {s/#//g;s/\/path\/to\/gfxtheme/\/boot\/grub\/themes\/calicomp\/theme.txt/g}' /etc/default/grub
+sudo cp -r boot/grub/* /boot/grub
+
+# Apply VSCodium extensions
+xargs -a vscodium-extensions.txt -L 1 vscodium --install-extension
+
+# To avoid crashes at boot as the GRUB theme is only 1080p compatible
+while true; do
+    echo -n "Are all your displays 1080p resolution? (Y/n) "
+    read display_valid_resolution
+
+    # User input to lowercase
+    display_valid_resolution=$(echo "$display_valid_resolution" | tr "[:upper:]" "[:lower:]")
+
+    if [[ $display_valid_resolution == "" || $display_valid_resolution == "y" || $display_valid_resolution == "yes" ]]; then
+        sudo sed -i '/GRUB_THEME/ {s/#//g;s/\/path\/to\/gfxtheme/\/boot\/grub\/themes\/calicomp\/theme.txt/g}' /etc/default/grub
+        break
+    elif [[ $display_valid_resolution == "n" || $display_valid_resolution == "no" ]]; then
+        break
+    fi
+done
+
 sudo sed -i '/GRUB_CMDLINE_LINUX_DEFAULT/ s/".*"/"loglevel=4 nvidia_drm.modeset=1"/g' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Apply /etc configs
-sudo cp -r dotfiles/etc/* /etc
+sudo cp -r etc/* /etc
 
 # Start systemd services
 sudo systemctl enable greetd
@@ -103,10 +126,18 @@ xdg-user-dirs-update
 # I don't know why this is installed
 sudo pacman -Runs xdg-desktop-portal-kde
 
-# Add wallpapers
-cp -r dotfiles/home/kutu/pictures/wallpapers ~/pictures
+# Add default wallpaper
+cp -r home/kutu/pictures/wallpapers ~/pictures
+
+# Change the Spicetify prefs path to match user home directory name
+# Use pipes instead of slashes to avoid syntax errors with the path inside $HOME
+sed -i "s|/home/kutu|$HOME|g" .config/spicetify/config-xpui.ini
 
 # Add custom mkinitcpio hooks and modules
 sudo sed -i '/^HOOKS=/ s/keymap/keymap setvtrgb consolefont numlock/g' /etc/mkinitcpio.conf
-sudo sed -i '/^MODULES=/ s/(/(nvidia nvidia_modeset nvidia_uvm nvidia_drm/g' /etc/mkinitcpio.conf
+
+if [[ $using_nvidia == true ]]; then
+    sudo sed -i '/^MODULES=/ s/(/(nvidia nvidia_modeset nvidia_uvm nvidia_drm/g' /etc/mkinitcpio.conf
+fi
+
 sudo mkinitcpio -p linux

@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=lofi
+Comment=Web App
+Exec=sh -c 'XAPP_FORCE_GTKWINDOW_ICON="/home/kutu/.local/share/ice/icons/Lofi.png" firefox --class WebApp-Lofi0636 --profile /home/kutu/.local/share/ice/firefox/Lofi0636 --no-remote "https://app.lofi.co/"'
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/kutu/.local/share/ice/icons/Lofi.png
+Categories=GTK;Network;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Lofi0636
+StartupNotify=true
+X-WebApp-Browser=Firefox
+X-WebApp-URL=https://app.lofi.co/
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true
+

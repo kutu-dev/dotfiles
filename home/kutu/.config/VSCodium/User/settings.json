@@ -1,0 +1,54 @@
+{
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 18,
+    "editor.renderWhitespace": "all",
+    "editor.bracketPairColorization.enabled": true,
+    "workbench.colorTheme": "Tokyo Night",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorCustomizations": {
+        "editorWhitespace.foreground": "#464646",
+    },
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.detectIndentation": false,
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[css]": {
+        "editor.tabSize": 2
+    },
+    "cSpell.userWords": [
+        "Alacritty",
+        "calicomp",
+        "Flexbox",
+        "Kanagawa",
+        "Kutu",
+        "OOTB",
+        "quicknote",
+        "quicknotes",
+        "strikethrough",
+        "themizer"
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "discord.suppressNotifications": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "powermode.enabled": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "colorize.include": [
+        "*",
+        "**/*.conf",
+        "**/*.kvconfig",
+        "**/*.rasi",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.less",
+        "**/*.styl"
+    ],
+    "cSpell.language": "en,en-US",
+    "cSpell.enableFiletypes": [
+        "shellscript"
+    ],
+}

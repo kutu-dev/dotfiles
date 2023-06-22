@@ -9,7 +9,7 @@ fi
 # Copy dotfiles from XDG_CONFIG_HOME
 rm -rf home
 
-config_subdirectories="fish kitty dunst eww gamemode.ini hypr kitty Kvantum neofetch rofi starship.toml swayidle swaylock udiskie waybar user-dirs.dirs spicetify/config-xpui.ini spicetify/CustomApps spicetify/Extensions spicetify/Themes gtk-3.0/settings.ini"
+config_subdirectories="fish kitty dunst eww gamemode.ini hypr kitty Kvantum neofetch rofi starship.toml swayidle swaylock udiskie waybar user-dirs.dirs spicetify/config-xpui.ini spicetify/CustomApps spicetify/Extensions spicetify/Themes gtk-3.0/settings.ini VSCodium/User/settings.json"
 
 for subdirectory in $config_subdirectories; do
     cp -r --parents $config_dir/$subdirectory .
@@ -23,6 +23,26 @@ cp -r --parents ~/.themes .
 
 # Copy rofi theme
 cp -r --parents ~/.local/share/rofi/themes/tokyo-night.rasi .
+
+# Copy Firefox profile
+cp -r --parents ~/.mozilla/firefox/profiles.ini .
+cp -r --parents ~/.mozilla/firefox/calicomp/prefs.js .
+cp -r --parents ~/.mozilla/firefox/calicomp/chrome .
+
+# Copy Web Apps data and desktop entries
+find ~/.local/share/applications -type f -name "webapp-*" -exec cp -r --parents "{}" . ";"
+cp -r --parents ~/.local/share/ice/icons .
+for profile in ~/.local/share/ice/firefox/*; do
+    if [[ $(basename $profile) == "Shared" ]]; then
+        continue
+    fi
+
+    cp -r --parents $profile/prefs.js .
+    cp -r --parents $profile/chrome .
+done
+
+# Save VSCodium extensions
+codium --list-extensions > vscodium-extensions.txt
 
 # Copy one of my wallpapers
 cp -r --parents ~/pictures/wallpapers/125.jpg .

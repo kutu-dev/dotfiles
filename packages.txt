@@ -1,7 +1,4 @@
-nvidia
-libva-nvidia-driver
-lib32-nvidia-utils
-hyprland-nvidia-git
+linux-headers
 ttf-ms-win11-auto
 xdg-desktop-portal-hyprland-git
 arrpc
@@ -29,6 +26,7 @@ dunst
 swayidle
 geary
 qt5-wayland
+qt5ct
 qt6-wayland
 xdg-user-dirs
 networkmanager
@@ -63,3 +61,5 @@ papirus-icon-theme
 imagemagick
 base16-vtrgb
 mkinitcpio-numlock
+posy-improved-cursors
+webapp-manager

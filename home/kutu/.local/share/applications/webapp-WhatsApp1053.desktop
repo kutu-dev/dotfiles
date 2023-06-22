@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=WhatsApp
+Comment=Web App
+Exec=sh -c 'XAPP_FORCE_GTKWINDOW_ICON="whatsapp" firefox --class WebApp-WhatsApp1053 --profile /home/kutu/.local/share/ice/firefox/WhatsApp1053 --no-remote "https://web.whatsapp.com/"'
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=whatsapp
+Categories=GTK;Network;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-WhatsApp1053
+StartupNotify=true
+X-WebApp-Browser=Firefox
+X-WebApp-URL=https://web.whatsapp.com/
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true
+
