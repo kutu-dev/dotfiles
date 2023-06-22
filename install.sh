@@ -44,8 +44,10 @@ while true; do
 
     if [[ $using_nvidia_prompt == "" || $using_nvidia_prompt == "y" || $using_nvidia_prompt == "yes" ]]; then
         using_nvidia=true
+        break
     elif [[ $using_nvidia_prompt == "n" || $using_nvidia_prompt == "no" ]]; then
         using_nvidia=false
+        break
     fi
 done
 
