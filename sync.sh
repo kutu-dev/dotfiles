@@ -24,6 +24,9 @@ cp -r --parents ~/.themes .
 # Copy rofi theme
 cp -r --parents ~/.local/share/rofi/themes/tokyo-night.rasi .
 
+# Copy cursor config
+cp -r --parents ~/.local/share/icons/default/index.theme .
+
 # Copy Firefox profile
 cp -r --parents ~/.mozilla/firefox/profiles.ini .
 cp -r --parents ~/.mozilla/firefox/calicomp/prefs.js .

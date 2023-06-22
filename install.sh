@@ -172,4 +172,6 @@ fi
 sudo mkinitcpio -p linux
 
 # Apply Spicetify
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
 spicetify backup apply
