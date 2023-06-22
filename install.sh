@@ -97,6 +97,8 @@ cp -r home/kutu/.local/* $local_dir
 
 cp -r home/kutu/.local/* $local_dir
 
+cp -r home/kutu/.face ~
+
 # Apply GTK themes
 cp -r home/kutu/.themes ~
 
