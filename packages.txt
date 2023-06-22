@@ -64,3 +64,4 @@ base16-vtrgb
 mkinitcpio-numlock
 posy-improved-cursors
 webapp-manager
+firefox

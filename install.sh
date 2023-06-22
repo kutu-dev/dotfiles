@@ -170,3 +170,6 @@ if [[ $using_nvidia == true ]]; then
 fi
 
 sudo mkinitcpio -p linux
+
+# Apply Spicetify
+spicetify backup apply
