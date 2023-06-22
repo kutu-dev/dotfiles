@@ -76,7 +76,7 @@ else
     paru -S hyprland
     
     # Remove unnecessary configurations from Hyprland config
-    sed -e '/#.*Nvidia.*/d' \
+    sed -i -e '/#.*Nvidia.*/d' \
     -e '/.*LIBVA_DRIVER_NAME.*/d' \
     -e '/.*XDG_SESSION_TYPE.*/d' \
     -e '/.*GBM_BACKEND.*/d' \
