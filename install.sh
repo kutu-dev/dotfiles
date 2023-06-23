@@ -53,12 +53,12 @@ done
 
 # Install paru
 if ! command -v paru &> /dev/null; then
-    sudo pacman -S base-devel rustup
+    sudo pacman -S --noconfirm base-devel rustup
     rustup default stable
     git clone https://aur.archlinux.org/paru.git
     cd paru/
     makepkg -si
-    sudo pacman -Runs rustup
+    sudo pacman -Runs --noconfirm rustup
     cd ..
 fi
 
@@ -66,14 +66,14 @@ fi
 sudo sed -i '/\[multilib\]/ {s/#//g;n;s/#//g}' /etc/pacman.conf
 
 # Install all packages
-paru -Syu
-paru -S $(awk '{print $1}' packages.txt)
+paru -Syu --noconfirm
+paru -S --noconfirm $(awk '{print $1}' packages.txt)
 
 if [[ $using_nvidia == true ]]; then
     # Install Nvidia specific packages
-    paru -S nvidia libva-nvidia-driver libva lib32-nvidia-utils hyprland-nvidia-git
+    paru -S --noconfirm nvidia libva-nvidia-driver libva lib32-nvidia-utils hyprland-nvidia-git
 else
-    paru -S hyprland
+    paru -S --noconfirm hyprland
     
     # Remove unnecessary configurations from Hyprland config
     sed -i -e '/#.*Nvidia.*/d' \
@@ -154,7 +154,7 @@ mkdir -p ~/videos
 xdg-user-dirs-update
 
 # I don't know why this is installed
-sudo pacman -Runs xdg-desktop-portal-kde
+sudo pacman -Runs --noconfirm xdg-desktop-portal-kde
 
 # Add default wallpaper
 cp -r home/kutu/pictures/wallpapers ~/pictures

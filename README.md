@@ -19,3 +19,54 @@ $ git clone https://github.com/kutu-dev/dotfiles.git
 $ cd dotfiles
 $ ./install.sh
 ```
+
+## Usage
+
+### Hyprland shortcuts
+| Command | Shortcut |
+| - | - |
+| Close window | `super + q` |
+| Sign out | `super + shift + q` |
+| Move focus left | `super + h` |
+| Move focus right | `super + l` |
+| Move focus up | `super + k` |
+| Move focus down | `super + j` |
+| Move to nº workspace | `super + nº` |
+| Move window to nº workspace | `super + shift + nº` |
+| Toggle floating window | `super + x` |
+| Move floating window | `super + left click + move mouse` |
+| Resize a window | `super + right click + move mouse` |
+| Toggle fullscreen | `super + m` |
+| Toggle fullscreen with gaps and topbar | `super + shift + m` |
+| Toggle layouts | `super + y` |
+| Toggle [gamemode](#gamemode) | `super + g` |
+| Screenshot | `super + s` |
+| Screenshot an area | `super + shift + s` |
+| Screenshot and save to disk | `super + control + s` |
+| Screenshot an area and save to disk | `super + control + shift + s` |
+| Change random [wallpaper](#wallpapers) | `super + w` |
+| Toggle [caffeine](#caffeine) | `super + f` |
+| Lock screen | `super + o` |
+| Open application launcher | `super + space` |
+| Open window switcher | `alt + space` |
+| Open quick actions | `control + space` |
+| Open terminal | `super + t` |
+| Open volume mixer | `super + b` |
+| Open color picker | `super + c` |
+| Open clipboard history | `super + v` |
+| Open notification context menu (interact with it) | `super + n` |
+| Toggle power menu | `super + p` |
+
+### Rofi menu
+### Waybar topbar? enlace arriba
+### Gamemode
+### Caffeine
+### Wallpapers
+
+## Contributing
+...
+
+## Author
+Created with :heart: by [Kutu](https://kutu-dev.github.io).
+> - GitHub - [kutu-dev](https://github.com/kutu-dev)
+> - Twitter - [@kutu_dev](https://twitter.com/kutu_dev)
