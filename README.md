@@ -88,7 +88,7 @@ At this moment, when you change the wallpaper with a shortcut (`super + w`) or c
 The `sync.sh` script will copy all the files that are supported by the `install.sh` script, because of this you can sync your dotfiles with the repository fast and clean. If you want to add more config files to the repository with paths non-compatible with the scripts, feel free to update them as well.
 
 ## Legal
-...
+This repository and all its content are not affiliated with [SUKEBAN GAMES](https://sukeban.moe/), [Nintendo](https://www.nintendo.com/), or any entity related to [Neon Genesis Evangelion](https://en.wikipedia.org/wiki/Neon_Genesis_Evangelion_(franchise)).
 
 ## Author
 Created with :heart: by [Kutu](https://kutu-dev.github.io).
