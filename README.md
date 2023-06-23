@@ -76,7 +76,7 @@ The topbar is composed of:
 - Power button. Click it to toggle the power menu.
 
 ### Gamemode
-Gamemode allows you to disable problematic shortcuts, remove the topbar and disable all the animations and effects to significantly improve the gaming experience of CALICOMP. You can enable it manually with a shortcut (`super + g`) or automatically using the wrapper command `gamemoderun` in your games (notice that this command is from the package `gamemode`, so it will also optimize your hardware for better performance).
+Gamemode allows you to disable problematic shortcuts, remove the topbar and disable all the animations and effects to significantly improve the gaming experience of CALICOMP. You can enable it manually with a shortcut (`super + g`) or automatically using the wrapper command `gamemoderun` in your games (notice that this command is from the package [`gamemode`](https://archlinux.org/packages/extra/x86_64/gamemode/), so it will also optimize your hardware for better performance).
 
 ### Caffeine
 Caffeine is a state of CALICOMP where the computer will always be awake (no auto lock screen or screen shutdown) even with no user input. You can activate it with a shortcut (`super + f`), with the power menu (`control + space`), or by clicking on the coffee icon at the [topbar](#waybar), here you can also see if it's enabled.
