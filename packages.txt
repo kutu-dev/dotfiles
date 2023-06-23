@@ -66,3 +66,4 @@ posy-improved-cursors
 webapp-manager
 firefox
 btop
+cava

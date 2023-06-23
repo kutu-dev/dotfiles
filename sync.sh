@@ -9,7 +9,7 @@ fi
 # Copy dotfiles from XDG_CONFIG_HOME
 rm -rf home
 
-config_subdirectories="fish kitty dunst eww gamemode.ini hypr kitty Kvantum neofetch rofi starship.toml swayidle swaylock udiskie waybar user-dirs.dirs spicetify/config-xpui.ini spicetify/CustomApps spicetify/Extensions spicetify/Themes gtk-3.0/settings.ini VSCodium/User/settings.json btop"
+config_subdirectories="fish kitty dunst eww gamemode.ini hypr kitty Kvantum neofetch rofi starship.toml swayidle swaylock udiskie waybar user-dirs.dirs spicetify/config-xpui.ini spicetify/CustomApps spicetify/Extensions spicetify/Themes gtk-3.0/settings.ini VSCodium/User/settings.json btop cava"
 
 for subdirectory in $config_subdirectories; do
     cp -r --parents $config_dir/$subdirectory .
