@@ -82,32 +82,32 @@ else
     -e '/.*GBM_BACKEND.*/d' \
     -e '/.*__GLX_VENDOR_LIBRARY_NAME.*/d' \
     -e '/.*WLR_NO_HARDWARE_CURSORS.*/d' \
-    home/kutu/.config/hypr/env.conf
+    home/user/.config/hypr/env.conf
 fi
 
 # Copy non hidden directories and files
-cp -r home/kutu/* ~
+cp -r home/user/* ~
 
 # Apply the dotfiles
 mkdir -p $config_dir
-cp -r home/kutu/.config/* $config_dir
+cp -r home/user/.config/* $config_dir
 
 mkdir -p  $local_dir
-cp -r home/kutu/.local/* $local_dir
+cp -r home/user/.local/* $local_dir
 
-cp -r home/kutu/.local/* $local_dir
+cp -r home/user/.local/* $local_dir
 
-cp -r home/kutu/.face ~
+cp -r home/user/.face ~
 
 # Apply GTK themes
-cp -r home/kutu/.themes ~
-cp -r home/kutu/.icons ~
+cp -r home/user/.themes ~
+cp -r home/user/.icons ~
 
 # Apply GTK 4 theme
-cp -r home/kutu/.themes/tokyo-night/gtk-4.0 $config_dir
+cp -r home/user/.themes/tokyo-night/gtk-4.0 $config_dir
 
 # Apply Mozilla dotfiles
-cp -r home/kutu/.mozilla/* ~/.mozilla
+cp -r home/user/.mozilla/* ~/.mozilla
 
 # Apply GRUB theme
 sudo cp -r boot/grub/* /boot/grub
@@ -157,11 +157,11 @@ xdg-user-dirs-update
 sudo pacman -Runs --noconfirm xdg-desktop-portal-kde
 
 # Add default wallpaper
-cp -r home/kutu/pictures/wallpapers ~/pictures
+cp -r home/user/pictures/wallpapers ~/pictures
 
 # Change the Spicetify prefs path to match user home directory name
 # Use pipes instead of slashes to avoid syntax errors with the path inside $HOME
-sed -i "s|/home/kutu|$HOME|g" .config/spicetify/config-xpui.ini
+sed -i "s|/home/user|$HOME|g" .config/spicetify/config-xpui.ini
 
 # Add custom mkinitcpio hooks and modules
 sudo sed -i '/^HOOKS=/ s/keymap/keymap setvtrgb consolefont numlock/g' /etc/mkinitcpio.conf

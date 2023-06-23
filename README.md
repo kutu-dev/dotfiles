@@ -6,13 +6,13 @@
 &nbsp;
 
 > **Warning**
-> Although CALICOMP has been tested in different hardware without any trouble its a personal project and can have flaws, so feel free to contribute and open issues but use it at your responsibility.
+> Although CALICOMP has been tested in different hardware without any trouble, it's a personal project and can have flaws, so feel free to contribute and open issues but use it at your responsibility.
 
 ## Installation
 > **Warning**
-> The install script is only compatible with Arch Linux and has been designed with clear installations on mind, the reliability in other environments is not insured. If you're using a different distro please try to do a manual install.
+> The install script is only compatible with Arch Linux and has been designed with clear installations in mind, the reliability in other environments is not insured. If you're using a different distro, please try to do a manual install.
 
-This script with apply all the dotfiles, install the necessary package and make some tweaks to the system for improvements. It will also set up all the needed configurations for Nvidia drives if you request it (Only the ones compatible with the [nvidia](https://archlinux.org/packages/extra/x86_64/nvidia/) package).
+This script with apply all the dotfiles, install the necessary package and make some tweaks to the system for improvements. It will also set up all the needed configurations for Nvidia graphics cards if you request it (Only for the ones compatible with the [nvidia](https://archlinux.org/packages/extra/x86_64/nvidia/) package).
 
 ```sh
 $ git clone https://github.com/kutu-dev/dotfiles.git
@@ -21,7 +21,6 @@ $ ./install.sh
 ```
 
 ## Usage
-
 ### Hyprland shortcuts
 | Command | Shortcut |
 | - | - |
@@ -49,7 +48,7 @@ $ ./install.sh
 | Lock screen | `super + o` |
 | Open application launcher | `super + space` |
 | Open window switcher | `alt + space` |
-| Open quick actions | `control + space` |
+| Open quick actions menu | `control + space` |
 | Open terminal | `super + t` |
 | Open volume mixer | `super + b` |
 | Open color picker | `super + c` |
@@ -57,13 +56,38 @@ $ ./install.sh
 | Open notification context menu (interact with it) | `super + n` |
 | Toggle power menu | `super + p` |
 
-### Rofi menu
-### Waybar topbar? enlace arriba
+### Waybar
+The topbar is composed of:
+- Workspace manager.
+- [Wallpaper change button](#wallpapers).
+- MPRIS status indicator.
+    - Left click it to pause.
+    - Right click to go to a Spotify window (if available).
+    - Scroll up to go to the next song.
+    - Scroll down to go to the previous song.
+- [Caffeine status button](#caffeine).
+- Package pending update counter. Click it to open a system update prompt.
+    - **P**: Official Arch packages
+    - **A**: AUR packages
+    - **F**: Flatpak packages
+- Audio and microphone volume percentage. Click it to open the volume mixer.
+- Network status. Click it to open NetworkManager connection editor.
+- Clock. Hover it to see the full date and time.
+- Power button. Click it to toggle the power menu.
+
 ### Gamemode
+Gamemode allows you to disable problematic shortcuts, remove the topbar and disable all the animations and effects to significantly improve the gaming experience of CALICOMP. You can enable it manually with a shortcut (`super + g`) or automatically using the wrapper command `gamemoderun` in your games (notice that this command is from the package `gamemode`, so it will also optimize your hardware for better performance).
+
 ### Caffeine
+Caffeine is a state of CALICOMP where the computer will always be awake (no auto lock screen or screen shutdown) even with no user input. You can activate it with a shortcut (`super + f`), with the power menu (`control + space`), or by clicking on the coffee icon at the [topbar](#waybar), here you can also see if it's enabled.
+
 ### Wallpapers
+At this moment, when you change the wallpaper with a shortcut (`super + w`) or click the [topbar](#waybar) picture icon, a new one will be selected randomly from `~/pictures/wallpapers`. In the future, CALICOMP will come with a wallpaper manager tool that will allow you to have random wallpapers organized in different pools.
 
 ## Contributing
+The `sync.sh` script will copy all the files that are supported by the `install.sh` script, because of this you can sync your dotfiles with the repository fast and clean. If you want to add more config files to the repository with paths non-compatible with the scripts, feel free to update them as well.
+
+## Legal
 ...
 
 ## Author

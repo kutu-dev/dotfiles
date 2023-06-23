@@ -67,3 +67,6 @@ done
 
 # Copy hacky fix for tuigreet
 cp -r --parents /usr/lib/systemd/system/greetd.service.d/00-nobleed.conf .
+
+# Change the user home name to a generic one
+mv home/$(basename $HOME) home/user
