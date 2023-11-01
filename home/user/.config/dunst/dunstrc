@@ -93,7 +93,6 @@
     foreground = "#f7768e"
     timeout = 0
 
-# Reproduce notificacion sound
 [play_sound]
     summary = "*"
     script = ~/.config/dunst/notification-sound.sh

@@ -1,3 +1,3 @@
-function ls -w exa --description "Change the default 'ls' to a configured 'exa'"
-    command exa --icons --git $argv
+function ls -w eza --description "Change the default 'ls' to a configured 'eza'"
+    command eza --icons --git $argv
 end

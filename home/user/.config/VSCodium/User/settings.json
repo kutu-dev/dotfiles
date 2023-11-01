@@ -1,56 +1,70 @@
 {
-    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 18,
-    "editor.renderWhitespace": "all",
-    "editor.bracketPairColorization.enabled": true,
-    "workbench.colorTheme": "Tokyo Night",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorCustomizations": {
-        "editorWhitespace.foreground": "#464646",
-    },
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.detectIndentation": false,
-    "[html]": {
-        "editor.tabSize": 2
-    },
-    "[css]": {
-        "editor.tabSize": 2
-    },
-    "cSpell.userWords": [
-        "Alacritty",
-        "calicomp",
-        "Flexbox",
-        "Hyprland",
-        "Kanagawa",
-        "Kutu",
-        "OOTB",
-        "quicknote",
-        "quicknotes",
-        "Rofi",
-        "strikethrough",
-        "themizer"
-    ],
-    "explorer.confirmDragAndDrop": false,
-    "discord.suppressNotifications": true,
-    "security.workspace.trust.untrustedFiles": "open",
-    "powermode.enabled": false,
-    "[python]": {
-        "editor.formatOnType": true
-    },
-    "colorize.include": [
-        "*",
-        "**/*.conf",
-        "**/*.kvconfig",
-        "**/*.rasi",
-        "**/*.css",
-        "**/*.scss",
-        "**/*.sass",
-        "**/*.less",
-        "**/*.styl"
-    ],
-    "cSpell.language": "en,en-US",
-    "cSpell.enableFiletypes": [
-        "shellscript"
-    ],
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
+  "editor.renderWhitespace": "all",
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorCustomizations": {
+    "editorWhitespace.foreground": "#464646"
+  },
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.detectIndentation": false,
+  "[html]": {
+    "editor.tabSize": 2
+  },
+  "[css]": {
+    "editor.tabSize": 2
+  },
+  "cSpell.userWords": [
+    "Alacritty",
+    "calicomp",
+    "Flexbox",
+    "Hyprland",
+    "Kanagawa",
+    "Kutu",
+    "OOTB",
+    "quicknote",
+    "quicknotes",
+    "Rofi",
+    "selfhosting",
+    "strikethrough",
+    "themizer"
+  ],
+  "explorer.confirmDragAndDrop": false,
+  "discord.suppressNotifications": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "powermode.enabled": false,
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true
+    }
+  },
+  "colorize.include": [
+    "*",
+    "**/*.conf",
+    "**/*.kvconfig",
+    "**/*.rasi",
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+    "**/*.styl"
+  ],
+  "cSpell.language": "en,en-US",
+  "cSpell.enableFiletypes": ["shellscript"],
+  "editor.linkedEditing": true,
+  "python.formatting.provider": "black",
+  "editor.formatOnSave": true,
+  "mypy.runUsingActiveInterpreter": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "autoDocstring.docstringFormat": "sphinx",
+  "files.exclude": {
+    "**/__pycache__": true
+  },
+  "editor.lineNumbers": "relative",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "redhat.telemetry.enabled": false
 }
